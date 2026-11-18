@@ -5,13 +5,13 @@
 class Listo < Formula
   desc "Command-line tool for the Listo Delivery API"
   homepage "https://docs.listo.delivery/en/guides/cli"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.1.0/listo_darwin_amd64.tar.gz"
-      sha256 "73304ae55898a4c454c8d6de6575f9a85807344870ac269a955724060c09385c"
+      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.2.0/listo_darwin_amd64.tar.gz"
+      sha256 "6e7ce63040a974c33dd00fc368a3b6c284c0260be606553862f5a3bd676c2f41"
 
       define_method(:install) do
         bin.install "listo"
@@ -21,8 +21,8 @@ class Listo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.1.0/listo_darwin_arm64.tar.gz"
-      sha256 "b1a3199621ccea6f9040b6c66ea5ba1409f1b9bac9f872be40dc73c8a0dcded1"
+      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.2.0/listo_darwin_arm64.tar.gz"
+      sha256 "7ee841a0654d2b2f18b34a2a8e776f5278cd10d63dbdf3cfe2277556535e9b3a"
 
       define_method(:install) do
         bin.install "listo"
@@ -35,8 +35,8 @@ class Listo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.1.0/listo_linux_amd64.tar.gz"
-      sha256 "cc3ff2070c8a8a10d9677c6821dd89a3822420fa6524b0d31af565c6ce8ebf86"
+      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.2.0/listo_linux_amd64.tar.gz"
+      sha256 "456f66c3998204839b2acc9658a39aee938494e228adf0f009727805c384ce50"
       define_method(:install) do
         bin.install "listo"
         (bash_completion/"listo").write Utils.safe_popen_read(bin/"listo", "completion", "bash")
@@ -45,8 +45,8 @@ class Listo < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.1.0/listo_linux_arm64.tar.gz"
-      sha256 "ae96c13760d1c2e1c88938feb48bbe10a7283bac11536d944ff1d7750eb6cd47"
+      url "https://github.com/listo-delivery/listo-cli/releases/download/v0.2.0/listo_linux_arm64.tar.gz"
+      sha256 "41809737c8a1354edd3bdf6b5d313b1189fa9854ee5b057bb6799d2a84f632b9"
       define_method(:install) do
         bin.install "listo"
         (bash_completion/"listo").write Utils.safe_popen_read(bin/"listo", "completion", "bash")
